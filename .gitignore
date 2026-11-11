@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Run outputs (regenerated per product; keep out of the repo)
+test_run/
+test_run_candle/
+temp_data*.json
+report*.pdf
+sanity_check.pdf
+
+# Keep the sample idea as the only run input in the repo
+!examples/idea.md

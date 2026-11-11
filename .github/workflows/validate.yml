@@ -1,0 +1,19 @@
+name: Validate fixtures
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate English fixture (LTR)
+        run: python validate.py tests/render_fixture.json
+      - name: Validate Arabic fixture (RTL)
+        run: python validate.py tests/render_fixture_ar.json

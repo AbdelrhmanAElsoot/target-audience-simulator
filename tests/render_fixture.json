@@ -1,0 +1,447 @@
+{
+  "meta": {
+    "product_name": "Nasma (نسمة)",
+    "language": "en",
+    "one_liner": "Nasma sells handmade soy scented candles inspired by Alexandria's neighborhoods (Bahary, Sidi Gaber, El-Manshiya) — 180 EGP for a 220 g candle with a claimed 35-40 hour burn, sold on Instagram and WhatsApp with cash on delivery.",
+    "generated_on": "2026-11-11",
+    "research_mode": "web",
+    "assumptions": [
+      "Unattended run on a fictional product: the owner was not available for questions, so every gap was recorded here instead of being silently guessed.",
+      "The burn time (35-40 hours) is the owner's claim from the brief — not a documented burn test; the personas treat it as a claim.",
+      "Production cost and margin are unknown (wax, wicks, fragrance, jars) — the report makes no judgement on pricing viability.",
+      "Scent throw and room coverage are not in the brief — treated as an experience gap, not a fact.",
+      "The 100% soy claim has no test or certificate behind it — the brief says soy wax with no paperwork.",
+      "Whether the packaging survives summer shipping (soy wax in a delivery van) is unknown — the brief mentions no thermal protection.",
+      "Each persona's monthly income is an assumption (not in the brief); the 150-400 EGP gift budget is real, from the brief.",
+      "The announcement post was built only from the brief's facts (price, sizes, delivery, COD) with no invented offer — because this was an unattended run and no real post was handed over.",
+      "Test sales are near zero per the brief — treated as reality: zero documented reviews are available to the brand."
+    ]
+  },
+
+  "sources": [
+    {
+      "id": "s1",
+      "title": "أروماتيكا — شموع معطرة في مصر مصنوعة يدوياً في القاهرة (Aromatica)",
+      "url": "https://aromatica-eg.com/ar/collections/scented-candles/",
+      "accessed": "2026-11-11",
+      "type": "retailer",
+      "reliability": "high",
+      "note": "The seller's own page with its own listed prices, dated 8 October 2026. Range 320-1250 EGP before shipping, shipping from 80 EGP, gift wrap 50 EGP."
+    },
+    {
+      "id": "s2",
+      "title": "ايكيا مصر — شموع معطرة (IKEA Egypt, 75 products)",
+      "url": "https://www.ikea.com/eg/ar/cat/scented-candles-10783/",
+      "accessed": "2026-11-11",
+      "type": "retailer",
+      "reliability": "high",
+      "note": "Official category page with visible prices and promo dates (discounts until 31.12.2026). The 20-hour cup showed at 169 discounted to 59, and the 40-hour cup at 219."
+    },
+    {
+      "id": "s3",
+      "title": "كرييتيف إيجيبت — شمع الصويا المعطر (Creative Egypt)",
+      "url": "https://www.creativeegypt.org/product/شمع-الصويا-المعطر/",
+      "accessed": "2026-11-11",
+      "type": "retailer",
+      "reliability": "high",
+      "note": "An Egyptian artisan marketplace: a soy scented candle at 410 EGP, out of stock, zero reviews."
+    },
+    {
+      "id": "s4",
+      "title": "كانبكام — شمع صويا ١٠٠٪ برائحة اللافندر (kanbkam / noon Egypt, brand: Tablowhaty)",
+      "url": "https://www.kanbkam.com/eg/ar/lavender-scented-candle-100-soywax-candle-Z4D01E068B091945B5F8BZ",
+      "accessed": "2026-11-11",
+      "type": "other",
+      "reliability": "medium",
+      "note": "JSON-LD data from the page: 400 g of 100% soy wax, brand Tablowhaty, price 0 and OutOfStock — recorded as a category-exists signal, not as a price benchmark."
+    },
+    {
+      "id": "s5",
+      "title": "Nasma brief, sent by the owner",
+      "url": "provided by user (brief)",
+      "accessed": "2026-11-11",
+      "type": "other",
+      "reliability": "high",
+      "note": "Source for every stated product fact (180/480/+30 EGP, 220 g, 35-40 hours, delivery 25/45, capacity 60 candles/week, 600 followers) and for the owner's estimate of the popular souq-candle market (20-60 EGP), to be confirmed with a quick check."
+    }
+  ],
+
+  "market": {
+    "summary": "Egypt's scented-candle market splits into three tiers: handmade premium (Aromatica — handmade in Cairo, 320-1250 EGP, shipping from 80 EGP, gift wrap 50 EGP), global mass (IKEA Egypt, 75 products from 49 to 449 EGP with strong seasonal discounts), and a quiet artisan tier (Creative Egypt lists a 410 EGP soy candle that is out of stock with zero reviews; noon Egypt carries a 400 g 100% soy candle by Tablowhaty, also out of stock with no listed price). Below all of it sit souq candles at 20-60 EGP per the owner's estimate. So there is a clear premium ceiling and a clear cheap floor, and the middle between them is exactly where Nasma sits — but that middle is also nearly empty of social proof: the research found no published reviews for any local artisan brand.",
+    "signals": [
+      { "claim": "Aromatica sells handmade candles made in Cairo for 320-1250 EGP before shipping (prices dated 8 October 2026), with shipping from 80 EGP and gift wrap at 50 EGP", "source_ids": ["s1"] },
+      { "claim": "IKEA Egypt lists 75 scented candles: a 12-hour cup at 49-59, a 20-hour cup at 109 (and a 169 to 59 promo), a 40-hour cup at 219, and a 3-wick 25-hour at 449", "source_ids": ["s2"] },
+      { "claim": "An artisan soy scented candle listed at 410 EGP on Creative Egypt — out of stock, with zero reviews", "source_ids": ["s3"] },
+      { "claim": "A 100% soy candle by Tablowhaty (400 g) listed on noon Egypt via kanbkam — out of stock, price not listed", "source_ids": ["s4"] },
+      { "claim": "The owner estimates souq candles at 20-60 EGP — the reference the budget skeptic measures against (to be confirmed with a quick check)", "source_ids": ["s5"] }
+    ],
+    "price_benchmarks": [
+      { "item": "Nasma — 220 g soy candle", "price": "180 EGP", "unit": "per candle (claimed 35-40 h burn means 4.5-5.1 EGP/hour)", "source_ids": ["s5"] },
+      { "item": "Nasma — 3-candle bundle", "price": "480 EGP", "unit": "per bundle (160 per candle — 20 EGP saved each)", "source_ids": ["s5"] },
+      { "item": "Nasma — gift wrap (kraft + handwritten card)", "price": "+30 EGP", "unit": "per order", "source_ids": ["s5"] },
+      { "item": "Aromatica — teddy candle, 161 g", "price": "320 EGP", "unit": "per piece (about 2.0 EGP/g)", "source_ids": ["s1"] },
+      { "item": "Aromatica — 350 g jar", "price": "550 EGP", "unit": "per piece (about 1.57 EGP/g)", "source_ids": ["s1"] },
+      { "item": "Aromatica — gift wrap", "price": "50 EGP", "unit": "per order", "source_ids": ["s1"] },
+      { "item": "IKEA — 40-hour cup", "price": "219 EGP", "unit": "per piece (about 5.5 EGP per burn hour)", "source_ids": ["s2"] },
+      { "item": "IKEA — 20-hour vanilla cup (JÄMLIK)", "price": "169 to 59 EGP", "unit": "per piece (about 3.0 EGP/hour at the promo price)", "source_ids": ["s2"] },
+      { "item": "Creative Egypt — soy scented candle", "price": "410 EGP", "unit": "per piece (out of stock)", "source_ids": ["s3"] },
+      { "item": "Souq candles", "price": "20-60 EGP", "unit": "per piece (owner's estimate — burn hours unknown)", "source_ids": ["s5"] }
+    ],
+    "implications": [
+      "Analysis: cost per burn hour favors Nasma — 180 EGP over a claimed 35-40 hours means 4.5-5.1 EGP/hour, cheaper than IKEA's 40-hour cup (219 = 5.5 EGP/h) and far below handmade premium (Aromatica's 350 g jar at 550). But the math only holds if the burn-time number is true — and that is a new brand's claim, not a published test.",
+      "Analysis: the budget skeptic does not see 'EGP/hour' first — he sees '180 = 3 souq candles (20-60 EGP)', a 3x to 9x gap on the same shelf. The brand has to run the correct math in public (a timed burn video) before the audience runs the wrong one.",
+      "Analysis: for gifts, a Nasma candle with wrap = 210 EGP versus the cheapest Aromatica gift = 320 + 50 wrap + 80 shipping, about 450. A strong deal for the gifter — missing only proof that the recipient will feel the value (brand plus the wrap experience).",
+      "Analysis: Cairo shipping at 45 EGP = 25% of the candle's price. Soy wax melts at fairly low heat (a known property of the material, assumed here) — summer shipping without documented thermal packaging can arrive warped, and that risk sits on 25% of the invoice."
+    ]
+  },
+
+  "competitors": [
+    {
+      "id": "c1",
+      "name": "Aromatica",
+      "type": "direct",
+      "what_they_offer": "Handmade scented candles made in Cairo, a wide range (teddy candles, mini sets, jars, 3-wick, outdoor) with ready gift wrap and personalization (names, dates, cards) — exactly Nasma's category, only better known.",
+      "price_note": "320-1250 EGP before shipping; teddy 161 g at 320; 350 g jar at 550; shipping from 80; gift wrap 50 [s1]",
+      "strengths": ["A known brand with a ready-made gift range", "Personalization (names and cards) is real gift value", "Declared delivery coverage inside Egypt"],
+      "weaknesses": ["The cheapest piece is 320 — it blows through a single-gift budget fast", "80 EGP shipping stacks onto small orders"],
+      "customer_voice": [],
+      "source_ids": ["s1"]
+    },
+    {
+      "id": "c2",
+      "name": "IKEA Egypt",
+      "type": "direct",
+      "what_they_offer": "Global mass scented candles in glass cups — the same use (ambiance and light) with no local identity, at factory prices.",
+      "price_note": "49-449 EGP; the 40-hour cup at 219; the 20-hour cup at 109 (and a 169 to 59 promo) [s2]",
+      "strengths": ["Always in stock at scale", "Seasonal discounts up to 60%", "Burn hours printed by the factory"],
+      "weaknesses": ["Generic scents with no story or identity", "The same experience in every home"],
+      "customer_voice": [],
+      "source_ids": ["s2"]
+    },
+    {
+      "id": "c3",
+      "name": "Creative Egypt (soy candle)",
+      "type": "indirect",
+      "what_they_offer": "An Egyptian artisan marketplace listing a soy scented candle — a category rival (artisan soy), not a brand rival: the product is out of stock with no activity around it.",
+      "price_note": "410 EGP per piece — out of stock, zero reviews [s3]",
+      "strengths": ["An artisan marketplace with display credibility", "Soy wax, the same category as Nasma"],
+      "weaknesses": ["Out of stock — not an active rival on the shelf", "Zero reviews: even this category has no social proof"],
+      "customer_voice": [],
+      "source_ids": ["s3"]
+    },
+    {
+      "id": "c4",
+      "name": "Tablowhaty on noon Egypt",
+      "type": "indirect",
+      "what_they_offer": "A 100% soy candle brand listed on the biggest marketplace — proof that the category is moving beyond Instagram, though it is still fragile.",
+      "price_note": "400 g — price not listed, out of stock [s4]",
+      "strengths": ["Reach through a marketplace with stronger trust channels", "A bigger size (400 g)", "A public 100% soy claim on a platform, not on Instagram"],
+      "weaknesses": ["Out of stock", "Price not listed — no reference point"],
+      "customer_voice": [],
+      "source_ids": ["s4"]
+    },
+    {
+      "id": "c5",
+      "name": "Souq and kiosk candles",
+      "type": "substitute",
+      "what_they_offer": "Cheap scented candles from the souq people already buy from daily — the substitute the budget skeptic keeps in mind against any brand price.",
+      "price_note": "20-60 EGP per piece (owner's estimate — unknown burn hours, generic scents) [s5]",
+      "strengths": ["Far cheaper", "Available instantly in any street", "No shipping and no waiting"],
+      "weaknesses": ["No burn-hour or material information", "Generic, repeated scents", "No story or gift around it"],
+      "customer_voice": [],
+      "source_ids": ["s5"]
+    }
+  ],
+
+  "personas": [
+    {
+      "id": "p1",
+      "name": "Maryam Abdelal",
+      "handle": "maryam_gifts",
+      "segment": "The gift buyer (25-32)",
+      "bio": "A 28-year-old marketing employee in Smouha. Every month there is an engagement, a birthday or a friend's occasion. She likes gifts with a story, and she cares how the gift lands in front of people.",
+      "stance": "supportive",
+      "age": "28",
+      "occupation": "Marketing employee",
+      "location": "Smouha, Alexandria",
+      "monthly_budget": "150-400 EGP per gift (from the brief); personal income estimated at 10,000-14,000 EGP/month (assumption)",
+      "current_alternatives": ["c1", "c5"],
+      "pain_points": [
+        "'Gifts with a story' in Alexandria end on the same lists (flowers, perfumes, decor)",
+        "The nice handmade brands cross 350 EGP and eat the whole gift budget",
+        "She is the one held accountable if the gift misses with the recipient"
+      ],
+      "buying_triggers": [
+        "A gift that tells a story: a scent named after an Alexandria neighborhood is a ready story",
+        "Gift wrap at 30 EGP instead of a brand's 50",
+        "A review from someone she knows before buying from a new brand"
+      ],
+      "grounding": [
+        { "fact": "The cheapest Aromatica gift piece is 320 EGP + 50 wrap + 80 shipping — a handmade-brand gift effectively starts at about 450 EGP", "source_ids": ["s1"] },
+        { "fact": "Her gift budget of 150-400 EGP per gift is from the brief — Nasma with wrap (210) fits inside it easily", "source_ids": ["s5"] }
+      ],
+      "day": [
+        { "time": "07:00", "activity": "Wakes up, coffee, first phone check", "evidence": "assumption", "source_ids": [] },
+        { "time": "07:40", "activity": "Scrolls Instagram before work", "evidence": "assumption", "source_ids": [], "touchpoint": "Nasma's post appears in the feed — 'scents of Alexandria's neighborhoods' is a line that stops her" },
+        { "time": "08:30", "activity": "Microbus to work", "evidence": "assumption", "source_ids": [] },
+        { "time": "09:00", "activity": "Marketing job, meetings and content", "evidence": "assumption", "source_ids": [] },
+        { "time": "12:30", "activity": "Break: the 'college girls' WhatsApp group asks about an engagement gift", "evidence": "inferred", "source_ids": [], "touchpoint": "Gifts get decided in these groups — if Nasma's post is forwarded here, that is the real distribution" },
+        { "time": "16:00", "activity": "Back home", "evidence": "assumption", "source_ids": [] },
+        { "time": "17:00", "activity": "Opens Aromatica's site to look for her friend's gift", "evidence": "sourced", "source_ids": ["s1"], "touchpoint": "The cheapest piece is 320 + 50 wrap + 80 shipping = about 450 — above a single-gift budget" },
+        { "time": "18:30", "activity": "Compares: returns to Nasma's post and adds 180 + 30 wrap + 25 delivery = 235", "evidence": "inferred", "source_ids": ["s5"], "touchpoint": "Half the cheapest handmade gift — but she asks herself: will it arrive looking like the photos?" },
+        { "time": "19:30", "activity": "Dinner with family", "evidence": "assumption", "source_ids": [] },
+        { "time": "21:00", "activity": "Second Instagram scroll", "evidence": "assumption", "source_ids": [], "touchpoint": "She looks for Nasma reviews in tagged posts — nothing there" },
+        { "time": "22:15", "activity": "Forwards Nasma's post to her friend for a second opinion", "evidence": "assumption", "source_ids": [] },
+        { "time": "23:30", "activity": "Sleep", "evidence": "assumption", "source_ids": [] }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Karim Sarhan",
+      "handle": "karim_at_desk",
+      "segment": "The WFH atmosphere lover",
+      "bio": "A 31-year-old remote graphic designer in Ibrahimiya. He sits at a desk 9-10 hours a day. He wants a calm environment and a steady scent while working, and buys a candle for himself every month or two.",
+      "stance": "skeptical",
+      "age": "31",
+      "occupation": "Remote graphic designer",
+      "location": "Ibrahimiya, Alexandria",
+      "monthly_budget": "Estimated 14,000-18,000 EGP/month (assumption); candle budget 150-250 EGP every two months (assumption)",
+      "current_alternatives": ["c2", "c5"],
+      "pain_points": [
+        "Mass-market scents fade fast over his long sessions — he keeps a candle burning a full day",
+        "He buys every two months, meaning he re-decides ten times a year — he needs a reason that persists",
+        "He will not pay a new brand without a burn number he can trust"
+      ],
+      "buying_triggers": [
+        "A documented burn number (a video or a test, not a label)",
+        "A scent that survives 6-8 working hours, not one",
+        "A burn-hour reference from another brand to compare against"
+      ],
+      "grounding": [
+        { "fact": "IKEA's 40-hour cup at 219 EGP = 5.5 EGP/hour — his factory-made reference for the math", "source_ids": ["s2"] },
+        { "fact": "IKEA's 20-hour promo at 59 EGP (59% off) keeps the category open at a small budget at any time", "source_ids": ["s2"] },
+        { "fact": "He browses IKEA's site himself on an ordinary day", "source_ids": ["s2"] }
+      ],
+      "day": [
+        { "time": "08:00", "activity": "Wakes up in the flat, coffee at the desk before opening the laptop", "evidence": "assumption", "source_ids": [] },
+        { "time": "09:00", "activity": "Remote work from the home office", "evidence": "assumption", "source_ids": [], "touchpoint": "This desk is the candle's real use case — 9 working hours means a scent that must last" },
+        { "time": "11:00", "activity": "Break: opens IKEA's site looking for a desk lamp", "evidence": "sourced", "source_ids": ["s2"], "touchpoint": "He stumbles into the candle category: the 20-hour cup at 109 and the 40-hour cup at 219 — factory numbers, printed" },
+        { "time": "13:00", "activity": "Quick lunch", "evidence": "assumption", "source_ids": [] },
+        { "time": "17:00", "activity": "Coffee on the balcony", "evidence": "assumption", "source_ids": [] },
+        { "time": "19:00", "activity": "Evening work block (a client deadline)", "evidence": "assumption", "source_ids": [] },
+        { "time": "21:30", "activity": "A film or a sitcom", "evidence": "assumption", "source_ids": [] },
+        { "time": "22:30", "activity": "Scrolls X and sees Nasma's launch post", "evidence": "assumption", "source_ids": [], "touchpoint": "First contact with the brand — the 180 EGP price hits him immediately" },
+        { "time": "23:00", "activity": "Runs the math: 180 over 35-40 hours = 4.5-5.1 EGP/hour against IKEA's 5.5", "evidence": "inferred", "source_ids": ["s5", "s2"], "touchpoint": "The math favors Nasma — but he asks: who said 40 hours?" },
+        { "time": "00:30", "activity": "Sleep", "evidence": "assumption", "source_ids": [] }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Hassan El-Far",
+      "handle": "hassan_el7asb",
+      "segment": "The budget skeptic (divides the price by burn hours)",
+      "bio": "A 43-year-old accountant in Fleming, attached to wholesale math in every purchase. He buys souq candles at 20-60 EGP and is convinced that any price above that is 'inflation spirit'.",
+      "stance": "hostile",
+      "age": "43",
+      "occupation": "Accountant",
+      "location": "Fleming, Alexandria",
+      "monthly_budget": "Estimated 300-500 EGP/month household treats budget (assumption)",
+      "current_alternatives": ["c5"],
+      "pain_points": [
+        "Sees any new brand's price as 'broken math' until proven otherwise",
+        "His souq candles fade fast, but he never accounts for it because the price is small",
+        "Distrusts the 'soy' claim — there is no paperwork"
+      ],
+      "buying_triggers": [
+        "Burn hours computed from a verifiable source",
+        "A cheap trial sample before committing 180 EGP",
+        "A tangible difference in the experience, not in the sentence"
+      ],
+      "grounding": [
+        { "fact": "He buys souq candles at 20-60 EGP — 180 EGP means 3-9 candles from his usual shelf", "source_ids": ["s5"] },
+        { "fact": "The cheapest documented per-hour reference: IKEA's 12-hour cup at 49-59 EGP, about 4-5 EGP/hour — close to Nasma's claim", "source_ids": ["s2"] }
+      ],
+      "day": [
+        { "time": "06:30", "activity": "Wakes early, dawn prayer, coffee", "evidence": "assumption", "source_ids": [] },
+        { "time": "07:30", "activity": "Tea and juice, radio or news", "evidence": "assumption", "source_ids": [] },
+        { "time": "08:30", "activity": "To work — an accounting office", "evidence": "assumption", "source_ids": [] },
+        { "time": "13:00", "activity": "Home for lunch with the family", "evidence": "assumption", "source_ids": [] },
+        { "time": "16:00", "activity": "The neighborhood souq — buys from the kiosks", "evidence": "inferred", "source_ids": ["s5"], "touchpoint": "The candle shelf at the kiosk: 20-60 EGP — the reference he measures any brand price against" },
+        { "time": "17:30", "activity": "Family sitting, television", "evidence": "assumption", "source_ids": [] },
+        { "time": "19:00", "activity": "Dinner", "evidence": "assumption", "source_ids": [] },
+        { "time": "20:30", "activity": "His son shows him Nasma's post on the phone", "evidence": "assumption", "source_ids": [], "touchpoint": "'180 EGP for a candle?!' — the first reaction" },
+        { "time": "21:00", "activity": "Argues with his son about the math", "evidence": "assumption", "source_ids": [] },
+        { "time": "22:30", "activity": "Sleep", "evidence": "assumption", "source_ids": [] }
+      ]
+    }
+  ],
+
+  "feed": [
+    { "id": "t1", "author": "brand", "type": "post", "reply_to": null, "text": "Nasma 🕯️ Handmade soy candles with the scents of Alexandria's neighborhoods — Bahary, Sidi Gaber, El-Manshiya. 220 g of soy wax + a cotton wick, a 35-40 hour burn, and the glass jar stays with you. Price: 180 EGP | The three-scent bundle: 480 EGP | Gift wrap (kraft + a handwritten card): +30 EGP. Delivery: Alexandria 25 EGP — Cairo 45 EGP. Cash on delivery. Order on Instagram or WhatsApp — production is limited because we make everything by hand.", "likes": 61, "reposts": 9 },
+    { "id": "t2", "author": "p3", "type": "post", "reply_to": null, "text": "180 EGP for a candle?! I buy 3 candles from the kiosk for 90 and still have change. 'Soy wax' is a grocery word they print on a label and people pay for it. Put up one lab sheet proving it is actually soy and I'll open the conversation.", "likes": 42, "reposts": 6 },
+    { "id": "t3", "author": "p1", "type": "post", "reply_to": null, "text": "The scent idea is a ready-made gift in itself — 'Bahary' is the name of an Alexandria district; the recipient lives it instead of reading about it. I buy gifts every month and the cheapest handmade-brand gift starts above 450 with wrap and shipping. This one is 210 with the wrap. The number is very reasonable.", "likes": 29, "reposts": 4 },
+    { "id": "t4", "author": "p2", "type": "post", "reply_to": null, "text": "Let me calculate instead of us getting emotional. 180 over 35-40 hours = 4.5-5.1 EGP per burn hour. IKEA's 40-hour cup = 219, that is 5.5 EGP/hour. So Nasma's price is cheaper per hour than the mass product itself. The only problem: who said 40 hours? The brand itself. No test, no video, no reference.", "likes": 38, "reposts": 7 },
+    { "id": "t5", "author": "p3", "type": "reply", "reply_to": "t4", "text": "That is my point. Every label says nice numbers. The 60 EGP souq candle claims 30 hours too, and nobody ever audited it. The real math is not 'EGP/hour' — the real math is: when does it actually burn out, and will you see it with your own eyes.", "likes": 31, "reposts": 3 },
+    { "id": "t6", "author": "p2", "type": "reply", "reply_to": "t5", "text": "Disagree. IKEA's number is factory-made with at least some QA. Nasma is a brand from zero — true. But the fix is not 'charge less'; the fix is publishing one documented test: a timelapse of a candle burning in front of a camera. One hour of content kills their biggest objection.", "likes": 26, "reposts": 5 },
+    { "id": "t7", "author": "p1", "type": "post", "reply_to": null, "text": "Question for the brand: the 30 EGP wrap — what exactly is it? Kraft and a handwritten card is nice, but Aromatica charges 50 and the look is known. I am buying a gift, so the wrap is half the feeling. Show me a real photo of the wrap, not a design.", "likes": 34, "reposts": 6 },
+    { "id": "t8", "author": "p3", "type": "post", "reply_to": null, "text": "And another thing: what does 'handmade' even mean in 2026? It means candle number 30 was made after number 29 and the batch varies. You are not buying a fixed product; you are buying a day in someone's life. That is not what these prices should be judged against.", "likes": 27, "reposts": 4 },
+    { "id": "t9", "author": "p1", "type": "reply", "reply_to": "t8", "text": "Exactly the opposite — that is the point. I am not buying a candle, I am buying a story to give: 'the scent of Sidi Gaber'. A factory candle never gives me a story.", "likes": 22, "reposts": 3 },
+    { "id": "t10", "author": "p2", "type": "post", "reply_to": null, "text": "A serious point: Cairo delivery is 45 EGP. This is a soy candle, and soy melts at fairly low heat. July shipping in a delivery van from Alexandria to Cairo — what exactly arrives? A half-melted jar? Not one word in the post about thermal packaging or a replacement policy.", "likes": 41, "reposts": 8 },
+    { "id": "t11", "author": "p3", "type": "reply", "reply_to": "t10", "text": "And that is 45 EGP on a 180 price = 25% shipping. In plain words: you are charging 180 and receiving 135 of candle value, while unsure it arrives intact.", "likes": 24, "reposts": 2 },
+    { "id": "t12", "author": "p1", "type": "post", "reply_to": null, "text": "A gift also means I do not test before sending — I am the buyer, not the user. If my friend opens it and hates the scent, there is no exchange and no refund. I carry the blame for the failed gift in front of people. I need something that kills that fear.", "likes": 33, "reposts": 5 },
+    { "id": "t13", "author": "p2", "type": "reply", "reply_to": "t12", "text": "That is a real gap, not noise. Suggestion: a 'one-time scent exchange' policy — the recipient swaps for another scent. It costs the brand one candle and buys far more trust.", "likes": 28, "reposts": 6 },
+    { "id": "t14", "author": "p2", "type": "post", "reply_to": null, "text": "Who said 'Bahary' actually smells like the sea? Scent is the most personal thing there is. I once bought a 'sea and sand' candle from another brand and it was plain vanilla. 180 EGP on a scent I am not sure about + 45 shipping = an expensive experiment. Where are the samples? A mini bundle of the three scents?", "likes": 37, "reposts": 7 },
+    { "id": "t15", "author": "p3", "type": "reply", "reply_to": "t14", "text": "That is one point, not three. A candle is not an equation; a candle is an unknown until it is lit. 600 followers and not a single review, and you want me to prepay 180?", "likes": 29, "reposts": 3 },
+    { "id": "t16", "author": "p1", "type": "post", "reply_to": null, "text": "Update: after thinking it over — I will try it. The three-scent bundle at 480 is exactly what I will do: each friend gets a scent, and I am done running out of flowers-and-perfume ideas. But I want two things confirmed first: real photos of the wrap, and a review from someone who actually bought.", "likes": 40, "reposts": 8 },
+    { "id": "t17", "author": "p2", "type": "reply", "reply_to": "t16", "text": "That review is the knot. You are asking for proof, and the brand has zero sales so far. The launch problem here is not the price — the price is sound. The problem is that there are no first 20 reviews building the bridge.", "likes": 25, "reposts": 4 },
+    { "id": "t18", "author": "p3", "type": "post", "reply_to": null, "text": "Let me say something useful instead of grumbling: a candle that burns properly lasts longer if you trim the wick every time before lighting. Most people do not, so they burn the wax down a tunnel. If you are a serious brand, teach people — it cuts your returns and buys goodwill.", "likes": 35, "reposts": 9 },
+    { "id": "t19", "author": "p1", "type": "post", "reply_to": null, "text": "An idea worth taking: if Nasma published scent profiles (who 'Bahary' suits, who 'El-Manshiya' suits) as content, those become choosing tools, not ads. If I need a gift for a sea person, I pick 'Bahary' because I understood it, not because the label was pretty.", "likes": 31, "reposts": 7 },
+    { "id": "t20", "author": "p2", "type": "post", "reply_to": null, "text": "One small but important thing: 'the jar stays with you' — good, but nothing explains how to get the wax out at the end without scratching the glass. A 20-second video solves that too. This brand needs content, not a price fix.", "likes": 30, "reposts": 5 },
+    { "id": "t21", "author": "p3", "type": "post", "reply_to": null, "text": "Last word: other brands say the same words. Aromatica says 'handmade in Cairo', charges 320, posts real photos and a known wrap. You are telling the same story for 180. Until something proves the words, I want evidence.", "likes": 38, "reposts": 6 },
+    { "id": "t22", "author": "p1", "type": "reply", "reply_to": "t21", "text": "Harsh but fair. I will pay the moment I see one real review — even from my groups. 600 followers is not proof; 6 reviews are the proof.", "likes": 24, "reposts": 3 },
+    { "id": "t23", "author": "p2", "type": "quote", "reply_to": "t1", "text": "To the brand: your price is sound (4.5-5.1 EGP/hour against IKEA's 5.5) — but there is no burn test, no summer-shipping protection, no scent samples, and no gift policy. Four near-zero-cost additions flip this post from curiosity to a purchase. It is not your price that is missing — it is the proof.", "likes": 44, "reposts": 10 },
+    { "id": "t24", "author": "p3", "type": "quote", "reply_to": "t1", "text": "The post's own best line: 'production is limited'. Fine — but limited needs paperwork: a photo of a real workshop, a batch at work, one face. Right now it reads like a magic shop — half the price of Aromatica, half the visibility.", "likes": 36, "reposts": 7 },
+    { "id": "t25", "author": "p1", "type": "quote", "reply_to": "t1", "text": "Summary: a full gift at 210 is a rare offer — the cheapest handmade brand is at about 450. I shared the photo in the group and three friends already liked the idea. All that is missing: one real review and one real wrap photo — and I order today.", "likes": 39, "reposts": 8 },
+    { "id": "t26", "author": "p2", "type": "post", "reply_to": null, "text": "Today's summary for whoever is reading: Nasma is not overpriced — it is under-proven. 35-40 hours without a video, soy without paperwork, a wrap without photos, summer shipping without protection. Any one of those becomes real with one honest piece of content. On the other side: the Alexandria-neighborhood story is the sharpest edge in this market — nobody sells a district; they sell a brand.", "likes": 47, "reposts": 12 }
+  ],
+
+  "objections": [
+    {
+      "id": "o1",
+      "title": "A brand new with zero reviews — 180 EGP prepaid is a bet, not a purchase",
+      "raised_by": ["p2", "p3"],
+      "category": "trust",
+      "severity": "blocker",
+      "mentions": 4,
+      "resolvability": "messaging",
+      "suggested_fix": "Before any marketing spend: turn the first 10-20 buyers (even neighbors and colleagues) into documented reviews with a short video and a photo of the delivered product — literally what the feed asked for ('6 reviews are the proof'). Handmade brands prove themselves with faces and photos, not sentences.",
+      "validation_question": "The last new brand you bought from on Instagram — what was the first thing that made you trust it?",
+      "evidence": ["t15", "t17", "t21", "t22"],
+      "source_ids": ["s3", "s4"]
+    },
+    {
+      "id": "o2",
+      "title": "The burn time (35-40 hours) is an unverified claim — and the whole pitch rests on it",
+      "raised_by": ["p2", "p3"],
+      "category": "trust",
+      "severity": "blocker",
+      "mentions": 3,
+      "resolvability": "design",
+      "suggested_fix": "Burn one candle on camera as a timelapse and publish the real number on the post. One documented number wins the entire EGP/hour argument (4.5-5.1 against IKEA's 5.5) — and from there the post starts winning.",
+      "validation_question": "If a brand tells you the candle burns for 40 hours, do you trust the printed number or want to see it yourself?",
+      "evidence": ["t4", "t5", "t6", "t23"],
+      "source_ids": ["s2"]
+    },
+    {
+      "id": "o3",
+      "title": "The skeptic's math: 180 = 3 souq candles (20-60 EGP) — a 3x to 9x gap on his usual shelf",
+      "raised_by": ["p3"],
+      "category": "price",
+      "severity": "blocker",
+      "mentions": 2,
+      "resolvability": "messaging",
+      "suggested_fix": "Do not argue about the price — replace the math: 'a souq candle fades in 10-15 hours with no number; we publish our number per hour', and tie it to the documented test from o2. With the budget skeptic you win the calculation, not the sentence.",
+      "validation_question": "When did you last buy a candle, for how much — and how long did it actually burn?",
+      "evidence": ["t2", "t5", "t21"],
+      "source_ids": ["s5", "s2"]
+    },
+    {
+      "id": "o4",
+      "title": "Cairo delivery at 45 EGP = 25% of the price — and a soy candle arriving in summer?",
+      "raised_by": ["p2", "p3"],
+      "category": "convenience",
+      "severity": "friction",
+      "mentions": 2,
+      "resolvability": "design",
+      "suggested_fix": "Test Cairo shipping yourself before offering it: send a candle to a Cairo address in peak heat (July-August) and inspect the state on arrival. If it needs thermal insulation (bubble wrap + a wax-safe box), price it in and say it explicitly in the post.",
+      "validation_question": "The last order that arrived warped or damaged by shipping — what did you do? Did you use the same service again?",
+      "evidence": ["t10", "t11"],
+      "source_ids": ["s5"]
+    },
+    {
+      "id": "o5",
+      "title": "The gift buyer's risk: no testing before sending, no exchange policy",
+      "raised_by": ["p1", "p2"],
+      "category": "convenience",
+      "severity": "friction",
+      "mentions": 2,
+      "resolvability": "design",
+      "suggested_fix": "One written policy: 'Did not like the scent? A one-time exchange for another scent.' It costs a candle, and it buys the gifter's whole decision instead of pushing them to a pricier brand they already trust.",
+      "validation_question": "If you gifted a candle and your friend hated the scent — what would you want to happen?",
+      "evidence": ["t12", "t13"],
+      "source_ids": []
+    },
+    {
+      "id": "o6",
+      "title": "Scent throw is unknown: does 'Bahary' actually smell of the sea? And how much room does it cover?",
+      "raised_by": ["p2"],
+      "category": "trust",
+      "severity": "friction",
+      "mentions": 2,
+      "resolvability": "design",
+      "suggested_fix": "Small trial samples (40-50 g of wax) of the three scents at 60-80 EGP with delivery inside Alexandria, or a trial bundle for the undecided. And publish a profile per scent (Bahary: who it suits) — the persona invented it in the feed.",
+      "validation_question": "Think of the last candle you used: was its scent strong enough for your room, or did it fade within half an hour?",
+      "evidence": ["t14", "t19"],
+      "source_ids": []
+    },
+    {
+      "id": "o7",
+      "title": "The gift wrap (+30) has no real photos — and it is the deciding point for the gift buyer",
+      "raised_by": ["p1"],
+      "category": "trust",
+      "severity": "friction",
+      "mentions": 2,
+      "resolvability": "messaging",
+      "suggested_fix": "Publish 3-4 real photos of the wrap from every angle (kraft, the handwritten card, how it opens) in the post's archive. One real photo takes under an hour and decides a 210 EGP gift.",
+      "validation_question": "When you look at a brand's gift-wrap photos, what makes a real photo beat a design?",
+      "evidence": ["t7", "t25"],
+      "source_ids": ["s1"]
+    }
+  ],
+
+  "unspoken_objections": [
+    {
+      "title": "'Soy' is a claim with no paperwork — and if it turns out to be a paraffin blend, the brand burns down once",
+      "why_it_might_exist": "The 100% soy claim is common in the category (Tablowhaty says the same, s4) and no published test exists for any local brand. The skeptic raised it as a spark ('a grocery word') but never took it to its conclusion — one rumor in a WhatsApp group can kill a small brand completely.",
+      "validation_question": "If a candle brand claimed '100% soy' and it turned out to be a blend — would you blame the brand or the whole market?"
+    },
+    {
+      "title": "Handmade is not a feature in the audience's eyes — it is inconsistent quality",
+      "why_it_might_exist": "The skeptic said it verbatim ('candle number 30 was made after number 29') — handmade means batch-to-batch variation, and the audience will not say it to the owner because it is an emotional point, not a technical one. First-batch defects (an off wick, a weaker scent) will arrive as individual complaints, not a public objection.",
+      "validation_question": "If you bought a candle, loved it, and the second one had a weaker scent — how would you feel about the brand?"
+    },
+    {
+      "title": "There is no summer plan: candles get bought in summer without anyone asking about shipping",
+      "why_it_might_exist": "Not in the brief, and the research found no thermal-packaging signal in the local market. It stays unspoken because buyers only learn it from experience (a warped candle arrives) — and a persona already raised it ('soy melts') without a fix.",
+      "validation_question": "Do you buy candles in summer? If your order arrives warped — do you blame the seller or the courier?"
+    }
+  ],
+
+  "strengths": [
+    { "title": "The Alexandria-neighborhood scent idea is a differentiation we found nobody else doing — Aromatica sells a scent; Nasma sells a district", "evidence": ["t3", "t9", "t19", "t26"] },
+    { "title": "A full gift at 210 EGP with the wrap sits inside the ready 150-400 budget — half the cheapest documented handmade brand (about 450)", "evidence": ["t3", "t25"] },
+    { "title": "Cost per burn hour favors Nasma (4.5-5.1) over documented factory mass (IKEA's 40-hour cup = 5.5)", "evidence": ["t4", "t23"] },
+    { "title": "Gift wrap at 30 EGP undercuts Aromatica's 50 — and adds one more sensory step to the brand", "evidence": ["t7"] }
+  ],
+
+  "sentiment": { "supportive": 1, "neutral": 0, "skeptical": 1, "hostile": 1 },
+
+  "next_steps": [
+    "Burn one candle on camera as a timelapse and publish the real burn hours — it kills the biggest blocker (o2) with a phone camera and one burn.",
+    "Take 3-4 real photos of the gift wrap from every angle and pin them in the Instagram archive — one hour of work that decides a gift (o7).",
+    "Trial samples: 40-50 g of wax in each of the three scents at 60-80 EGP with Alexandria delivery — opens the door for the undecided (o6).",
+    "Write a one-time scent-exchange policy for gifts and put it in the bio — the cost is one candle, the gain is full trust (o5).",
+    "Test Cairo shipping yourself in peak heat: send a candle to a Cairo address in July-August and inspect it on arrival before committing to the service (o4)."
+  ],
+
+  "research_gaps": [
+    "Jumia Egypt timed out twice — no scented-candle prices from the biggest local marketplace.",
+    "Amazon.eg returned 503 — unavailable for price research.",
+    "No published burn-hour standard or test exists in the local market — every burn figure (IKEA, Aromatica, Nasma) is the seller's claim.",
+    "No published customer reviews for any local artisan soy candle (Creative Egypt has zero) — social proof for the whole category is near zero.",
+    "Nasma's production cost and margin are unknown — any price advice here is market math, not a viability verdict.",
+    "No safety-certification information (wicks, thermal stability) for any local brand surfaced in the research.",
+    "The souq-candle estimate (20-60 EGP) is the owner's word, not a published source — it needs a quick check by walking a full souq.",
+    "The primary websearch tool was down (HTTP 402) for part of the run; research ran through DuckDuckGo HTML, so coverage may be thinner than a normal flow."
+  ]
+}

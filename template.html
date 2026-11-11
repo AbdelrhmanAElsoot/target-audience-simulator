@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="{{ data.meta.language }}" dir="{{ 'rtl' if data.meta.language == 'ar' else 'ltr' }}">
+<head>
+<meta charset="utf-8">
+<title>{{ data.meta.product_name }} - Objection Report</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm; @bottom-center { content: counter(page); font-size: 9pt; color: #888; } }
+  :root { --ink:#1b1f24; --muted:#6b7280; --line:#e5e7eb; --card:#f3f4f6; --accent:#0f766e;
+          --blocker:#b91c1c; --friction:#b45309; }
+  * { box-sizing: border-box; }
+  body { font-family: "Cairo", "Noto Naskh Arabic", "Noto Sans Arabic", "Amiri", "DejaVu Sans", sans-serif;
+         color: var(--ink); font-size: 10.5pt; line-height: 1.6; unicode-bidi: plaintext; }
+  h1 { font-size: 22pt; margin: 0 0 4pt; }
+  h2 { font-size: 14pt; margin: 20pt 0 8pt; padding-bottom: 4pt; border-bottom: 2px solid var(--accent); color: var(--accent); page-break-after: avoid; }
+  h3 { page-break-after: avoid; }
+  .sub { color: var(--muted); margin: 0 0 10pt; }
+  .disclaimer { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 6pt; padding: 8pt 10pt; font-size: 9.5pt; margin: 10pt 0; }
+  .banner { border-radius: 6pt; padding: 8pt 10pt; font-size: 9.5pt; margin: 10pt 0; }
+  .banner.ok { background: #ecfdf5; border: 1px solid #6ee7b7; }
+  .banner.warn { background: #fef2f2; border: 1px solid #fca5a5; }
+  .grid { width: 100%; border-collapse: separate; border-spacing: 0 6pt; }
+  .bar-row td { padding: 0 4pt; vertical-align: middle; }
+  .bar-label { width: 22%; font-size: 10pt; }
+  .bar-track { background: var(--line); border-radius: 4pt; height: 11pt; }
+  .bar-fill { height: 11pt; border-radius: 4pt; }
+  .bar-num { width: 10%; font-size: 10pt; color: var(--muted); }
+  .supportive { background: #16a34a; } .neutral { background: #9ca3af; }
+  .skeptical { background: #d97706; } .hostile { background: #dc2626; }
+  .obj { border: 1px solid var(--line); border-radius: 8pt; padding: 9pt 11pt; margin-bottom: 9pt; page-break-inside: avoid; }
+  .obj h3 { margin: 0 0 4pt; font-size: 11.5pt; }
+  .tag { display: inline-block; font-size: 8.5pt; padding: 1pt 7pt; border-radius: 9pt; margin-inline-end: 4pt; background: var(--card); color: var(--ink); }
+  .tag.blocker { background: #fee2e2; color: var(--blocker); }
+  .tag.friction { background: #fef3c7; color: var(--friction); }
+  .kv { margin: 3pt 0 0; font-size: 10pt; }
+  .kv b { color: var(--accent); }
+  .ref { color: var(--muted); font-size: 8pt; }
+  bdi.ltr { direction: ltr; unicode-bidi: isolate; }
+  .tweet { background: var(--card); border-radius: 10pt; padding: 8pt 11pt; margin-bottom: 7pt; page-break-inside: avoid; }
+  html[dir=rtl] .tweet.reply { margin-right: 22pt; }
+  html[dir=ltr] .tweet.reply { margin-left: 22pt; }
+  .t-head { font-size: 9.5pt; }
+  .t-name { font-weight: bold; }
+  .t-handle, .t-meta { color: var(--muted); font-size: 8.5pt; }
+  .t-text { margin: 3pt 0; font-size: 10.5pt; }
+  .avatar { display: inline-block; width: 16pt; height: 16pt; border-radius: 8pt; background: var(--accent); color: #fff;
+            text-align: center; font-size: 8.5pt; line-height: 16pt; margin-inline-end: 5pt; }
+  .avatar.brand { background: #111827; }
+  ul.clean { margin: 0; padding-inline-start: 16pt; }
+  ul.clean li { margin-bottom: 4pt; }
+  table.data { width: 100%; border-collapse: collapse; margin: 4pt 0 8pt; font-size: 9.5pt; }
+  table.data th { background: var(--card); text-align: start; padding: 4pt 6pt; border: 1px solid var(--line); }
+  table.data td { padding: 4pt 6pt; border: 1px solid var(--line); vertical-align: top; }
+  table.data tr { page-break-inside: avoid; }
+  .badge { display: inline-block; font-size: 8pt; padding: 0 6pt; border-radius: 8pt; white-space: nowrap; }
+  .ev-sourced { background: #dcfce7; color: #166534; }
+  .ev-inferred { background: #e0e7ff; color: #3730a3; }
+  .ev-assumption { background: #fef3c7; color: #92400e; }
+  .rel-high { background: #dcfce7; color: #166534; }
+  .rel-medium { background: #fef3c7; color: #92400e; }
+  .rel-low { background: #fee2e2; color: #991b1b; }
+  .pcard { border: 1px solid var(--line); border-radius: 8pt; padding: 9pt 11pt; margin-bottom: 12pt; }
+  .pcard h3 { margin: 0 0 4pt; font-size: 12pt; }
+  .evbar { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 4pt 0; }
+  .evbar td { height: 7pt; padding: 0; }
+  .evbar .s { background: #16a34a; } .evbar .i { background: #6366f1; } .evbar .a { background: #f59e0b; }
+  .comp { border: 1px solid var(--line); border-radius: 8pt; padding: 8pt 11pt; margin-bottom: 8pt; page-break-inside: avoid; }
+  .comp h3 { margin: 0 0 3pt; font-size: 11.5pt; }
+  .src { border-bottom: 1px solid var(--line); padding: 5pt 0; font-size: 9.5pt; page-break-inside: avoid; }
+  .src .url { color: var(--muted); font-size: 8.5pt; word-break: break-all; }
+  .touch { color: var(--muted); font-size: 9pt; }
+</style>
+</head>
+<body>
+
+{% macro evb(e) %}<span class="badge ev-{{ e }}">{{ labels['ev_' ~ e] }}</span>{% endmacro %}
+
+<h1>{{ data.meta.product_name }}</h1>
+<p class="sub">{{ data.meta.one_liner }} &middot; <bdi class="ltr">{{ data.meta.generated_on }}</bdi></p>
+
+<div class="banner {{ banner_class }}">{{ banner }}</div>
+
+<div class="disclaimer">
+  {% if data.meta.language == 'ar' %}
+  هذا التقرير ناتج عن محاكاة وليس قياساً حقيقياً للسوق. الاعتراضات المذكورة فرضيات تحتاج فحصاً سريعاً منك أنت قبل أي قرار.
+  {% else %}
+  This report comes from a simulation, not a measurement of the real market. The objections below are hypotheses to check cheaply yourself before any decision.
+  {% endif %}
+</div>
+
+{% if data.meta.assumptions %}
+<div class="disclaimer">
+  <b>{{ labels['assump_title'] }}:</b>
+  <ul class="clean">{% for a in data.meta.assumptions %}<li>{{ a }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+<h2>{{ labels['sent_title'] }}</h2>
+<table class="grid">
+  {% for key in ['supportive','neutral','skeptical','hostile'] %}
+  <tr class="bar-row">
+    <td class="bar-label">{{ labels[key] }}</td>
+    <td><div class="bar-track"><div class="bar-fill {{ key }}" style="width: {{ sentiment_pct[key] }}%"></div></div></td>
+    <td class="bar-num">{{ sentiment_pct[key] }}%</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h2>{{ 'الاعتراضات مرتبة حسب الخطورة' if data.meta.language == 'ar' else 'Objections, ranked' }}</h2>
+{% for o in objections_sorted %}
+<div class="obj">
+  <h3>{{ loop.index }}. {{ o.title }}</h3>
+  <span class="tag {{ o.severity }}">{{ labels[o.severity] }}</span>
+  <span class="tag">{{ labels[o.category] }}</span>
+  <span class="tag">{{ labels[o.resolvability] }}</span>
+  <span class="tag">{{ o.mentions }} {{ labels['mentions'] }}</span>
+  {{ refs(o.source_ids) }}
+  <p class="kv"><b>{{ labels['fix'] }}:</b> {{ o.suggested_fix }}</p>
+  <p class="kv"><b>{{ labels['ask'] }}:</b> {{ o.validation_question }}</p>
+</div>
+{% endfor %}
+
+<h2>{{ 'اعتراضات لم يذكرها أحد (فرضيات)' if data.meta.language == 'ar' else 'Unspoken objections (hypotheses)' }}</h2>
+{% for u in data.unspoken_objections %}
+<div class="obj">
+  <h3>{{ u.title }} {{ refs(u.source_ids) }}</h3>
+  <p class="kv"><b>{{ labels['why'] }}:</b> {{ u.why_it_might_exist }}</p>
+  <p class="kv"><b>{{ labels['ask'] }}:</b> {{ u.validation_question }}</p>
+</div>
+{% endfor %}
+
+<h2>{{ 'نقاط الجذب' if data.meta.language == 'ar' else 'What attracted people' }}</h2>
+<ul class="clean">
+  {% for s in data.strengths %}<li>{{ s.title }}</li>{% endfor %}
+</ul>
+
+<h2>{{ 'خطوات الاختبار القادمة' if data.meta.language == 'ar' else 'Next steps to validate' }}</h2>
+<ul class="clean">
+  {% for s in data.next_steps %}<li>{{ s }}</li>{% endfor %}
+</ul>
+
+{% if data.market.summary or data.market.signals %}
+<h2 style="page-break-before: always;">{{ labels['sec_market'] }}</h2>
+{% if data.market.summary %}<p>{{ data.market.summary }}</p>{% endif %}
+
+{% if data.market.signals %}
+<h3>{{ labels['sec_signals'] }}</h3>
+<table class="data">
+  <tr><th>{{ labels['col_claim'] }}</th><th style="width: 14%;">{{ labels['col_source'] }}</th></tr>
+  {% for s in data.market.signals %}<tr><td>{{ s.claim }}</td><td>{{ refs(s.source_ids) }}</td></tr>{% endfor %}
+</table>
+{% endif %}
+
+{% if data.market.price_benchmarks %}
+<h3>{{ labels['sec_prices'] }}</h3>
+<table class="data">
+  <tr><th>{{ labels['col_item'] }}</th><th style="width: 26%;">{{ labels['col_price'] }}</th><th style="width: 11%;">{{ labels['col_unit'] }}</th><th style="width: 12%;">{{ labels['col_source'] }}</th></tr>
+  {% for b in data.market.price_benchmarks %}
+  <tr><td>{{ b.item }}</td><td>{{ b.price }}</td><td>{{ b.unit }}</td><td>{{ refs(b.source_ids) }}</td></tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+{% if data.market.implications %}
+<h3>{{ labels['sec_implications'] }}</h3>
+<ul class="clean">{% for i in data.market.implications %}<li>{{ i }}</li>{% endfor %}</ul>
+{% endif %}
+{% endif %}
+
+{% if data.competitors %}
+<h2>{{ labels['sec_competitors'] }}</h2>
+{% for c in data.competitors %}
+<div class="comp">
+  <h3>{{ c.name }} <span class="tag">{{ labels['ctype_' ~ c.type] }}</span> {{ refs(c.source_ids) }}</h3>
+  <p class="kv"><b>{{ labels['offers'] }}:</b> {{ c.what_they_offer }}</p>
+  <p class="kv"><b>{{ labels['price_note'] }}:</b> {{ c.price_note }}</p>
+  {% if c.strengths %}<p class="kv"><b>{{ labels['strengths'] }}:</b> {{ c.strengths | join(' &middot; ' | safe) }}</p>{% endif %}
+  {% if c.weaknesses %}<p class="kv"><b>{{ labels['weaknesses'] }}:</b> {{ c.weaknesses | join(' &middot; ' | safe) }}</p>{% endif %}
+  <p class="kv"><b>{{ labels['voice'] }}:</b>
+    {% if c.customer_voice %}{% for v in c.customer_voice %}&laquo;{{ v.quote }}&raquo; {{ refs(v.source_ids) }} {% endfor %}
+    {% else %}<span class="touch">{{ labels['none_found'] }}</span>{% endif %}
+  </p>
+</div>
+{% endfor %}
+{% endif %}
+
+<h2>{{ labels["sec_personas"] }}</h2>
+{% for p in personas_view %}
+<div class="pcard">
+  <h3>{{ p.name }} <span class="t-handle"><bdi class="ltr">@{{ p.handle }}</bdi></span> &middot; <span class="tag {{ p.stance if p.stance in ['supportive','neutral','skeptical','hostile'] else '' }}" style="background: transparent;">{{ labels[p.stance] }}</span></h3>
+  <p class="kv"><b>{{ p.segment }}:</b> {{ p.bio }}</p>
+  <p class="kv"><b>{{ labels['age'] }}:</b> {{ p.age }} &nbsp; <b>{{ labels['job'] }}:</b> {{ p.occupation }} &nbsp; <b>{{ labels['place'] }}:</b> {{ p.location }}</p>
+  <p class="kv"><b>{{ labels['budget'] }}:</b> {{ p.monthly_budget }}</p>
+  {% if p.alt_names %}<p class="kv"><b>{{ labels['alts'] }}:</b> {{ p.alt_names | join(' &middot; ' | safe) }}</p>{% endif %}
+  <p class="kv"><b>{{ labels['pains'] }}:</b> {{ p.pain_points | join(' &middot; ' | safe) }}</p>
+  <p class="kv"><b>{{ labels['triggers'] }}:</b> {{ p.buying_triggers | join(' &middot; ' | safe) }}</p>
+
+  <p class="kv"><b>{{ labels['grounding'] }}:</b>
+    {% if p.grounding %}</p><ul class="clean">{% for g in p.grounding %}<li>{{ g.fact }} {{ refs(g.source_ids) }}</li>{% endfor %}</ul>
+    {% else %}<span class="touch">{{ labels['no_grounding'] }}</span></p>{% endif %}
+
+  <h3 style="font-size: 10.5pt; margin: 8pt 0 2pt;">{{ labels['day'] }}</h3>
+  <table class="evbar"><tr>
+    {% if p.ev.sourced %}<td class="s" style="width: {{ p.ev_pct.sourced }}%"></td>{% endif %}
+    {% if p.ev.inferred %}<td class="i" style="width: {{ p.ev_pct.inferred }}%"></td>{% endif %}
+    {% if p.ev.assumption %}<td class="a" style="width: {{ p.ev_pct.assumption }}%"></td>{% endif %}
+  </tr></table>
+  <p class="t-meta">{{ labels['evshare'] }}: {{ labels['ev_sourced'] }} {{ p.ev.sourced }} &middot; {{ labels['ev_inferred'] }} {{ p.ev.inferred }} &middot; {{ labels['ev_assumption'] }} {{ p.ev.assumption }}</p>
+  <table class="data">
+    <tr><th style="width: 11%;">{{ labels['col_time'] }}</th><th>{{ labels['col_activity'] }}</th><th style="width: 14%;">{{ labels['col_evidence'] }}</th></tr>
+    {% for e in p.day %}
+    <tr>
+      <td><bdi class="ltr">{{ e.time }}</bdi></td>
+      <td>{{ e.activity }}{% if e.touchpoint %}<br><span class="touch">&rarr; {{ e.touchpoint }}</span>{% endif %}</td>
+      <td>{{ evb(e.evidence) }} {{ refs(e.source_ids) }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endfor %}
+
+<h2 style="page-break-before: always;">{{ 'الفيد المُحاكى (الدليل)' if data.meta.language == 'ar' else 'Simulated feed (evidence)' }}</h2>
+{% for t in feed_view %}
+<div class="tweet {{ 'reply' if t.reply_to else '' }}">
+  <div class="t-head">
+    <span class="avatar {{ 'brand' if t.is_brand else '' }}">{{ t.initial }}</span>
+    <span class="t-name">{{ t.name }}</span> <span class="t-handle"><bdi class="ltr">@{{ t.handle }}</bdi></span>
+    <span class="t-meta">&middot; <bdi class="ltr">#{{ t.id }}</bdi></span>
+  </div>
+  <div class="t-text">{{ t.text }}</div>
+  <div class="t-meta">&#9825; {{ t.likes }} &nbsp; &#8635; {{ t.reposts }}</div>
+</div>
+{% endfor %}
+
+<h2 style="page-break-before: always;">{{ labels['sec_gaps'] }}</h2>
+<ul class="clean">{% for g in data.research_gaps %}<li>{{ g }}</li>{% endfor %}</ul>
+
+{% if data.sources %}
+<h2>{{ labels['sec_sources'] }}</h2>
+{% for s in data.sources %}
+<div class="src">
+  <b><bdi class="ltr">[{{ s.id }}]</bdi></b> {{ s.title }}
+  <span class="badge rel-{{ s.reliability }}">{{ labels['rel_' ~ s.reliability] }}</span>
+  <div class="url"><bdi class="ltr">{{ s.url }}</bdi></div>
+  <div class="t-meta">{{ labels['accessed'] }}: <bdi class="ltr">{{ s.accessed }}</bdi> &middot; {{ s.note }}</div>
+</div>
+{% endfor %}
+{% endif %}
+
+</body>
+</html>
