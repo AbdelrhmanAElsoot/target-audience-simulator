@@ -42,7 +42,7 @@ Install into your agent's skills folder (any one of these):
 | Any other agent | clone anywhere and tell the agent to follow its `SKILL.md` |
 
 ```bash
-git clone <your-repo-url> .claude/skills/target-audience-simulator
+git clone https://github.com/AbdelrhmanAElsoot/target-audience-simulator.git .claude/skills/target-audience-simulator
 pip install -r .claude/skills/target-audience-simulator/requirements.txt
 ```
 
